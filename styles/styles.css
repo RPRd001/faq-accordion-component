@@ -1,0 +1,120 @@
+/* Setting initial styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+/* Declaring variables for each color used */
+:root {
+    --white: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%)
+}
+
+body {
+    /* Background */
+    background-image: url('../assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: var(--Light-pink);
+
+    /* Height and Layout */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Font */
+    font-family: 'Work Sans', 'sans-serif';
+}
+
+
+
+/* FAQ Accordion Component */
+#faq-accordion-component {
+    background-color: var(--white);
+    max-width: 600px;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+#faq-accordion-component > svg, #faq-accordion-component > img {
+    display: block;
+}
+
+.accordion-item img {
+    min-width: 25px;
+}
+
+.icon-minus {
+    display: none;
+}
+
+.accordion-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accordion-header > h1 {
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.accordion-container, .accordion-item:not(:last-child) {
+    border-bottom: 2.5px solid var(--Light-pink);
+}
+
+
+.accordion-button {
+    /* Design */
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+    /* Font */
+    font-size: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 1.1rem 0rem;
+
+    /* Height, width and Layout */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Button's active state */
+.accordion-button:hover {
+    color: purple;
+}
+
+.accordion-text {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 200ms ease;
+}
+
+.accordion-text > p {
+    color: var(--Grayish-purple);
+    padding: 1.2rem 0rem;
+}
+
+
+/* Media Query */
+@media (max-width: 540px) {
+    body {
+        background-image: url(../assets/images/background-pattern-mobile.svg);
+    }
+}
